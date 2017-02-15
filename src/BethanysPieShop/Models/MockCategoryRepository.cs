@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShop.Models
 {
-    public class MockCategoryRepository: ICategoryRepository
+    public class MockCategoryRepository : ICategoryRepository
     {
         public IEnumerable<Category> Categories
         {
@@ -20,3 +20,4 @@ namespace BethanysPieShop.Models
             }
         }
     }
+}

@@ -39,4 +39,32 @@ namespace BethanysPieShop.Models
                 );
             }
 
+            context.SaveChanges();
         }
+
+        private static Dictionary<string, Category> categories;
+        public static Dictionary<string, Category> Categories
+        {
+            get
+            {
+                if (categories == null)
+                {
+                    var genresList = new Category[]
+                    {
+                        new Category { CategoryName = "Fruit pies" },
+                        new Category { CategoryName = "Cheese cakes" },
+                        new Category { CategoryName = "Seasonal pies" }
+                    };
+
+                    categories = new Dictionary<string, Category>();
+
+                    foreach (Category genre in genresList)
+                    {
+                        categories.Add(genre.CategoryName, genre);
+                    }
+                }
+
+                return categories;
+            }
+        }
+    }

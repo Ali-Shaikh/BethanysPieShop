@@ -30,8 +30,8 @@ namespace BethanysPieShop
         {
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<Models.ICategoryRepository, Models.MockCategoryRepository>();
-            services.AddTransient<Models.IPieRepository, Models.MockPieRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IPieRepository, PieRepository>();
             services.AddMvc();
         }
 
